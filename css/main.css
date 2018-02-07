@@ -1,0 +1,640 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+#tilte{
+    text-align: center;
+}
+
+#configPanel{               /*交互界面*/
+    float:left;
+    position: relative;
+    margin-left: 350px;
+    width: 350px;
+    height: 600px;
+    background-color: #ffffff;
+}
+
+#payTablePanel{             /*预览窗口*/
+    float: left;
+    position: absolute;
+    margin-left: 750px;
+    background:rgba(255,255,255,0);
+    width: 800px;
+    height:600px;
+    z-index: 2;
+}
+
+#SujectListText {               /*关卡列表文字*/
+    float: left;
+    position:relative;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+#SujectList{            /*关卡列表*/
+    font-size: 15px;
+    float:left;
+    position:relative;
+    margin-top: 7px;
+    margin-left: 10px;
+    width:255px;
+    height:35px;
+}
+
+#BackGroundMapText{     /*背景图文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:22px;
+
+
+}
+#BackGroundMapEB{      /*背景图输入框*/
+    float:left;
+    position:relative;
+    margin-top:17px;
+    margin-left:10px;
+    width:240px;
+    height:30px;
+}
+#Files{
+    float:left;
+    position:relative;
+    width:240px;
+    height:30px;
+    font-size:17px;
+}
+
+
+#PayLineColorText{          /*赢钱线颜色文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:20px;
+
+}
+#PayLineColorEB{        /*赢钱线颜色编辑框*/
+    float:right;
+    position:relative;
+    margin-top:10px;
+    margin-right:10px;
+    width:200px;
+    height:35px;
+}
+
+#BackGroundPayLineColorText{          /*赢钱线背景颜色文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:24px;
+
+}
+#BackGroundPayLineColorEB{        /*赢钱线背景颜色编辑框*/
+    float:right;
+    position:relative;
+    margin-top:12px;
+    margin-right:10px;
+    width:200px;
+    height:35px;
+}
+
+#RowNumText{          /*每行显示个数文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:29px;
+
+}
+#RowNumEB{          /*每行显示个数编辑框*/
+    resize: none;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    font-size:20px;
+    float:right;
+    position:relative;
+    margin-top:17px;
+    margin-right:10px;
+    width:200px;
+    height:30px;
+}
+
+#NumPostionListText {           /*赢钱线序号位置文字*/
+    float: left;
+    position:relative;
+    margin-left: 10px;
+    margin-top: 29px;
+}
+#NumPostionList{            /*赢钱线序号位置下拉列表*/
+
+    float:left;
+    position:relative;
+    margin-top: 17px;
+    margin-left: 10px;
+    width:200px;
+    height:35px;
+}
+
+#SerialNumTypeText {           /*序号字体文字*/
+    float: left;
+    position:relative;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+#SerialNumTypeEB{            /*序号字体文字下拉列表*/
+
+    float:left;
+    position:relative;
+    margin-top: 17px;
+    margin-left: 10px;
+    width:250px;
+    height:35px;
+}
+
+#SerialNumSizeText{          /*序号大小文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:27px;
+
+}
+#SerialNumSizeEB{        /*序号大小编辑框*/
+    resize: none;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    font-size:20px;
+    float:right;
+    position:relative;
+    margin-top:17px;
+    margin-right:10px;
+    width:200px;
+    height:30px;
+}
+#SerialNumColorText{          /*序号颜色文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:32px;
+
+}
+#SerialNumColorEB {        /*序号颜色编辑框*/
+    float:right;
+    position:relative;
+    margin-top:22px;
+    margin-right:10px;
+    width:200px;
+    height:30px;
+}
+#SelectFile{     /*上传json文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:27px;
+
+
+}
+#SelectFileEB{      /*上传json输入框*/
+    float:left;
+    font-size:25px;
+    position:relative;
+    margin-top:22px;
+    margin-left:10px;
+    width:210px;
+    height:30px;
+}
+#SeleFiles{
+    float:left;
+    position:relative;
+    width:210px;
+    height:30px;
+    font-size:17px;
+}
+#NumOfJson{          /*json文件数文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:20px;
+
+}
+#NumOfJsonEb{        /*json文件数编辑框*/
+    resize: none;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    font-size:20px;
+    float:right;
+    position:relative;
+    margin-top:17px;
+    margin-right:20px;
+    width:100px;
+    height:25px;
+}
+#SeleSerial{          /*选择的赢钱线序号文字*/
+
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:20px;
+
+}
+#SeleSerialEB1{        /*选择的开始赢钱线序号1*/
+    resize: none;
+    font-size:20px;
+    position:relative;
+    margin-top:12px;
+    margin-left:10px;
+    width:60px;
+    height:25px;
+}
+
+#SeleSerial1{          /*选择的赢钱线序号文字*/
+
+
+    position:relative;
+    margin-left:5px;
+    margin-top:20px;
+
+}
+#SeleSerialEB2{        /*选择的结束赢钱线序号2*/
+    resize: none;
+    font-size:20px;
+    position:relative;
+    margin-top:12px;
+    margin-right:15px;
+    width:60px;
+    height:25px;
+}
+#Rendering {            /* 效果图文字*/
+    float:left;
+    position:relative;
+    margin-left:10px;
+    margin-top:15px;
+}
+
+#DisplayInterfaceLable1{     /*预览界面背景lable可缩放*/
+    float:left;
+    margin-left:-50px;
+    margin-top:50px;
+    width:785px;
+    height:460px;
+    z-index: 1;
+    position: absolute;
+    background:rgba(255,255,255,0);
+}
+#DisplayInterfaceLable2{     /*预览界面背景lable可缩放*/
+    float:left;
+    margin-left:-50px;
+    margin-top:50px;
+    width:785px;
+    height:460px;
+    z-index: 0;
+    position: absolute;
+    background:rgba(255,255,255,0);
+}
+#DisplayInterface1{     /*预览界面*/
+
+    float:left;
+    background:rgba(255,255,255,0);
+    margin-top:0;
+    position: static;
+    z-index: 1;
+    width: 785px;
+    height: 460px;
+
+}
+
+#ImgInput{     /*预览界面*/
+
+    top: 0;
+    float:left;
+    max-height: 460px;
+    max-width: 785px;
+    z-index:-1;
+    position: absolute;
+
+    background:rgba(255,255,255,0);
+
+}
+
+ #FileNameText{                 /* 文件名文字*/
+     float:left;
+     margin-top:545px;
+     margin-left:100px;
+     z-index: 2;
+     position: absolute;
+ }
+#FileNameEB{                /*文件名显示框*/
+    float:left;
+    margin-top:538px;
+    margin-left:190px;
+    z-index: 2;
+    position: absolute;
+    width:220px;
+    height:30px;
+}
+
+
+
+
+#Preview{                   /*预览按钮*/
+    float:left;
+    margin-left:470px;
+    margin-top:540px;
+    width:100px;
+    height:30px;
+    z-index: 3;
+    position: relative;
+}
+
+
+#Tips{
+    resize: none;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    float:left;
+    margin-top:10px;
+    position: relative;
+    margin-left: 350px;
+    width: 1200px;
+    height: 50px;
+    z-index: 2;
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <script src="jquery-3.3.1.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+    </head>
+
+    <body>
+        <!-- Add your site or application content here -->
+        <p id = "tilte">PayTable Generate</p>
+        <div>
+            <div id="configPanel" style="border:1px solid #515151;">
+                <div>
+                <label id = SujectListText>关卡列表 </label>
+                <select id = "SujectList" >
+                </select>
+                </div>
+                <div>
+                    <label id = "BackGroundMapText">上传背景图</label>
+                    <label id="BackGroundMapEB" style="border:1px solid #515151;" >
+                        <div>
+                            <input type="file" id="Files" name="files[]" style = "OVERFLOW: auto" height="30px" accept="image/*" >
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <label id = "PayLineColorText">赢钱线颜色</label>
+                    <input type="color" id="PayLineColorEB"  value="#ff0000" >
+                </div>
+                <div>
+                    <label id = "BackGroundPayLineColorText">赢钱线背景颜色</label>
+                    <input type="color" id="BackGroundPayLineColorEB" value="#ff0000" >
+                </div>
+                <div>
+                    <label id = "RowNumText" value = "352132">每行显示个数</label>
+                    <textarea id="RowNumEB" ></textarea>
+                </div>
+                <div>
+                    <label id = NumPostionListText>赢钱线序号位置 </label>
+                    <select id = "NumPostionList">
+                        <option value="up">上</option>
+                        <option value="down">下</option>
+                        <option value="left">左</option>
+                        <option value="right">右</option>
+                    </select>
+                </div>
+                <div>
+                    <label id = SerialNumTypeText>序号字体 </label>
+                    <select id = "SerialNumTypeEB">
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Apple Chancery">Apple Chancery</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="Baskerville">Baskerville</option>
+                        <option value="Big Caslon">Big Caslon</option>
+                        <option value="Brush Script">Brush Script</option>
+                        <option value="Capitals">Capitals</option>
+                        <option value="Charcoal">Charcoal</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Copperplate">Copperplate</option>
+                        <option value="Courier New	">Courier New</option>
+                        <option value="Futura">Futura</option>
+                        <option value="Gadget">Gadget</option>
+                        <option value="Gill Sans">Gill Sans</option>
+                        <option value="Herculanum">Herculanum</option>
+                        <option value="Hoefler Text">Hoefler Text</option>
+                        <option value="Hoefler Text Ornaments">Hoefler Text Ornaments</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Lucida Grande">Lucida Grande</option>
+                        <option value="Marker Felt">Marker Felt</option>
+                        <option value="Optima">Optima</option>
+                        <option value="Osaka">Osaka</option>
+                        <option value="Palatino">Palatino</option>
+                        <option value="Papyrus">Papyrus</option>
+                        <option value="Sand">Sand</option>
+                        <option value="Skia">Skia</option>
+                        <option value="Symbol">Symbol</option>
+                        <option value="Techno">Techno</option>
+                        <option value="Textile">Textile</option>
+                        <option value="Times">Times</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Trebuchet MS">Trebuchet MS</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Webdings">Webdings</option>
+                        <option value="Zapfino">Zapfino</option>
+                        <option value="Zapf Dingbats">Zapf Dingbats</option>
+                    </select>
+                </div>
+                <div>
+                    <label id = "SerialNumSizeText">序号大小</label>
+                    <textarea id="SerialNumSizeEB" ></textarea>
+                </div>
+                <div>
+                <label id = "SerialNumColorText">序号颜色</label>
+                    <input type="color" id="SerialNumColorEB"  value="#ff0000" >
+                </div>
+                <div>
+                    <label id = "SelectFile">上传Json文件</label>
+                    <label id="SelectFileEB" style="border:1px solid #515151;" >
+                        <div>
+                            <input type="file" id="SeleFiles" name="selefiles[]" style = "OVERFLOW: auto" height="30px" width="210" >
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <label id = "NumOfJson">当前Json文件赢钱线总数</label>
+                    <textarea id="NumOfJsonEb" readonly="true"></textarea>
+                </div>
+                <div>
+                    <label id = "SeleSerial">要预览的赢钱线序号</label>
+                    <textarea id="SeleSerialEB1" ></textarea>
+                        <label id = "SeleSerial1">-</label>
+                    <textarea id="SeleSerialEB2" ></textarea>
+                </div>
+            </div>
+            <div id="payTablePanel"style="border:1px solid #515151;">
+                <div>
+                    <label id = "Rendering" >效果图</label>
+                </div>
+
+                <div>
+                    <label id = "DisplayInterfaceLable1"   style="border:1px solid #515151;  OVERFLOW: auto">
+
+                        <canvas id = "DisplayInterface1" style="width:785px;height:460px;"></canvas>
+
+
+
+                    </label>
+                    <label id = "DisplayInterfaceLable2"   style="border:1px solid #515151;  OVERFLOW: auto">
+                        <img src="base.png" id="ImgInput" width="785" height="460">
+                    </label>
+
+                </div>
+                <div>
+                    <label id = "FileNameText">文件名</label>
+                    <input id="FileNameEB" type="text" name="FileNameEBinput"  style ="border:1px solid #515151;"readonly="true">
+                </div>
+                <div>
+                    <button id = "Preview">预览</button>
+                </div>
+            </div>
+            <div>
+                <textarea id="Tips" style ="border:1px solid #515151;text-align:left;color:#3748FF; " readonly="true">使用说明：上传赢钱线页payable背景图（大小不超过785x460）— 修改颜色、字体、字号配置 — 点击预览按钮查看效果 — 复制文件名，右键点击图片另存为，保存到本地；
+注意：保存的图片分辨率为785*460，自行ps处理图片</textarea>
+            </div>
+        </div>
+        <script src="js/afterloading.js"></script>
+    </body>
+</html>
