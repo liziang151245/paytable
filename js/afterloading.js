@@ -202,7 +202,7 @@ function ShowFileName(selectNum) {
             alert("当前文件无法解析，请联系程序开发人员");
         }
         displayName = displayName.replace(" " ,"_").toLowerCase()
-        document.getElementById("FileNameEB").value =  selectNum + "_" + displayName +"_paylines.png";
+        document.getElementById("FileNameEB").value =  selectNum + "_" + displayName +"_paytable.png";
     });
     loadJsonFile = false;
 }
