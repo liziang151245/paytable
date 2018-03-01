@@ -1,30 +1,36 @@
-//create by ziang.li on 2018.02.05
+//create by ziAng.li on 2018.02.05
 
 
 var canvas  = document.getElementById("DisplayInterface1");
 var context = canvas.getContext("2d");
-
+var blankLeft = 20;
+var blankTop = 20;
 var jsonFile;                                        //用户点选的Json文件信息
 var previewButton = document.getElementById("Preview");                     //预览按钮
 var payLineColorEB ;                                 //赢钱线颜色
 var backGroundPayLineColorEB ;                       //赢钱线背景颜色
 var rowNumEB ;                                       //每行显示个数
-var numPostionList ;                                //序号位置
+var numPositionList ;                                //序号位置
 var serialNumTypeEB ;                             //序号字体
 var serialNumSizeEB  ;                             //序号大小
 var serialNumColorEB ;                           //序号颜色
-var paylineWidth;                                   //每个赢钱线的长
-var paylineHeight;                                   //每个赢钱线的宽
-var arrx;                                    //payline的横向格子数
-var arry;                                   //payline的总想格子数
-var movx;                                   //x方向变换赢钱线的位移
+var payLineWidth;                                   //每个赢钱线的长
+var payLineHeight;                                   //每个赢钱线的宽
+var arrayX;                                    //payline的横向格子数
+var arrayY;                                   //payline的总想格子数
+var movX;                                   //x方向变换赢钱线的位移
 var movy ;                                      //y方向变换赢钱线的位移
 var loadJsonFile = false;                   //用来判断json文件是否是已经载入的关卡列表里面的文件
 var seleSerialEB1;                           //选择的起始预览序号
 var seleSerialEB2;                             //选择的结束预览序号
-var count;
 var PreUrlName = "JsonFile/subject_tmpl_"; //通用路径前缀
 var SufUrlName = ".json";     //通用路径后缀
+var winWidth = 785;
+var winHeight = 460;
+var SubjectTmplIdList ;            //载入的关卡数的数组
+
+
+//获取当前浏览器逻辑分辨率与物理分辨率的比值
 var PIXEL_RATIO = (function () {
     var ctx = document.createElement("canvas").getContext("2d"),
         dpr = window.devicePixelRatio || 1,
@@ -36,14 +42,15 @@ var PIXEL_RATIO = (function () {
 
     return dpr / bsr;
 })();
-//读取主关卡数文件
 
+
+//读取主关卡数文件
 $.getJSON( PreUrlName + "id_list.json",function (data) {
     SubjectTmplIdList = data;
     initSujectList();
 });
 
-var SubjectTmplIdList ;            //载入的关卡数的数组
+
 
 
 
@@ -52,19 +59,19 @@ var SubjectTmplIdList ;            //载入的关卡数的数组
 function initSujectList() {
 
     var length = SubjectTmplIdList.subjectTmplIdList.length;
-    var SubjectTmplId ;
+    var SubjectTempId ;
 
     for(var i=0;i<length;i++) {
 
-        SubjectTmplId=SubjectTmplIdList.subjectTmplIdList[i];
-        addSujectList(SubjectTmplId);
+        SubjectTempId=SubjectTmplIdList.subjectTmplIdList[i];
+        addSubjectList(SubjectTempId);
     }
 }
 
 //根据当前关卡数生成关卡列表和名字
-function addSujectList(SubjectTmplId) {
+function addSubjectList(SubjectTempId) {
 
-    $.getJSON( PreUrlName + SubjectTmplId+ SufUrlName,function (data) {
+    $.getJSON( PreUrlName + SubjectTempId+ SufUrlName,function (data) {
         var displayName ;
         if (undefined === data.displayName) {
 
@@ -79,11 +86,11 @@ function addSujectList(SubjectTmplId) {
         }
         if(data.lines[0].length > 1){
 
-            SujectList.options.add(new Option("第" + SubjectTmplId + "关" + "：     " + displayName, SubjectTmplId));
+            SujectList.options.add(new Option("第" + SubjectTempId + "关" + "：     " + displayName, SubjectTempId));
         }
     });
-    canvas.width = 785 * PIXEL_RATIO;
-    canvas.height = 460 * PIXEL_RATIO;
+    canvas.width = winWidth * PIXEL_RATIO;
+    canvas.height = winHeight * PIXEL_RATIO;
 }
 
 
@@ -93,12 +100,13 @@ previewButton.onclick = function () {
 
     payLineColorEB = document.getElementById("PayLineColorEB").value;
     backGroundPayLineColorEB = document.getElementById("BackGroundPayLineColorEB").value;
-    numPostionList = document.getElementById("NumPostionList").value;
+    numPositionList = document.getElementById("NumPostionList").value;
     serialNumTypeEB = document.getElementById("SerialNumTypeEB").value;
     serialNumColorEB = document.getElementById("SerialNumColorEB").value;
 
     serialNumSizeEB = document.getElementById("SerialNumSizeEB").value;
     if("" == serialNumSizeEB) {
+
         serialNumSizeEB = 30;
         document.getElementById("SerialNumSizeEB").value = 30;
     }
@@ -107,68 +115,79 @@ previewButton.onclick = function () {
 
     rowNumEB = document.getElementById("RowNumEB").value;
     if("" == rowNumEB) {
+
         rowNumEB = 5;
         document.getElementById("RowNumEB").value = 5;
     }
+
     rowNumEB = parseInt(rowNumEB);
-    var selectnum = document.getElementById("SujectList").value; //当前关卡数
+    var selectNum = document.getElementById("SujectList").value; //当前关卡数
 
-        context.clearRect(0, 0, 785, 460);
+    context.clearRect(0, 0, winWidth, winHeight);
 
-    GetArrOption(selectnum);
+    GetArrOption(selectNum);
 };
+
 //获取json文件里面line的属性
-//selectnum:当前选择的关卡数
-function GetArrOption(selectnum) {
+//selectNum:当前选择的关卡数
+function GetArrOption(selectNum) {
 
     if(loadJsonFile == false) {
-        $.getJSON(PreUrlName + selectnum + ".json", function (data) {
+
+        $.getJSON(PreUrlName + selectNum + ".json", function (data) {
             var data = data;
-            GetInfoPayline(data)
+            GetInfoPayLine(data)
         });
     }
     else {
+
         var data = jsonFile;
-        var selectnum = jsonFile.subjectTmplId;
-        GetInfoPayline(data)
+         selectNum = jsonFile.subjectTmplId;
+        GetInfoPayLine(data)
     }
-    ShowFileName(selectnum);
+
+    ShowFileName(selectNum);
 }
 
 
 
 //解析每条payline的信息
 //data：从文件里面读取出来的属性
-function GetInfoPayline(data) {
+function GetInfoPayLine(data) {
     var i = 0;
     var j = 0;
     var data = data;
-    arrx = (data.lines[0][0]).rows.length;
-    arry = 0;
+    arrayX = (data.lines[0][0]).rows.length;
+    arrayY = 0;
     while (undefined != data.lines[0][i]) {
 
         for (j = 0; undefined != (data.lines[0][i]).rows[j]; j++) {
 
-            if (arry < (data.lines[0][i]).rows[j]) {
+            if (arrayY < (data.lines[0][i]).rows[j]) {
 
-                arry = (data.lines[0][i]).rows[j];
+                arrayY = (data.lines[0][i]).rows[j];
             }
         }
+
         i++;
     }
-    arry = arry + 1;
+
+    arrayY = arrayY + 1;
     document.getElementById("NumOfJsonEb").value = i;
-    Countdata(i,data);
+    CountData(i,data);
 }
 
 
 //根据当前选择关卡数生成保存后的文件名
-//selectnum:当前选择的关卡数
-function ShowFileName(selectnum) {
-    var selectnum =selectnum;
+//selectNum:当前选择的关卡数
+function ShowFileName(selectNum) {
 
-    $.getJSON( PreUrlName + selectnum + SufUrlName,function (data) {
-        var displayName  ;
+    var selectNum =selectNum;
+
+    $.getJSON( PreUrlName + selectNum + SufUrlName,function (data) {
+
+        var displayName ;
+
         if (undefined === data.displayName) {
 
             displayName = data.client.displayName;
@@ -177,152 +196,173 @@ function ShowFileName(selectnum) {
 
             displayName = data.displayName;
         }
+
         if(undefined == displayName ){
+
             alert("当前文件无法解析，请联系程序开发人员");
         }
-           document.getElementById("FileNameEB").value =  selectnum + "_" + displayName +"_paylines.png";
+        displayName = displayName.replace(" " ,"_").toLowerCase()
+        document.getElementById("FileNameEB").value =  selectNum + "_" + displayName +"_paylines.png";
     });
     loadJsonFile = false;
 }
 
 
 
-//根据获得的用户输入参数 对每个payline进行计算
-function Countdata(i,data) {
+//根据获得的用户输入参数 对每个payline的位置数据进行计算
+function CountData(serialNum,data) {
 
     var data = data;
 
-    if("up" == numPostionList || "down" == numPostionList) {                         //当前序号位置为上下
+    if("up" == numPositionList || "down" == numPositionList) {                         //当前序号位置为上下
 
-        paylineWidth = (745 * arrx) / (rowNumEB * ( arrx + 1 ) - 1);
-        paylineHeight = paylineWidth / arrx * arry;
-        movx = paylineWidth + paylineWidth / arrx;
-        movy = paylineHeight +  serialNumSizeEB + 2 * paylineHeight / arry ;
-        DrawPaytable(i, data);
+        payLineWidth = ((winWidth - 2 * blankLeft) * arrayX) / (rowNumEB * ( arrayX + 1 ) - 1);
+        payLineHeight = payLineWidth / arrayX * arrayY;
+        movX = payLineWidth + payLineWidth / arrayX;
+        movy = payLineHeight +  serialNumSizeEB + 2 * payLineHeight / arrayY ;
+        DrawPayTable(serialNum, data);
     }
+    else if("left" == numPositionList || "right" == numPositionList){                             //当前序号位置为左右
 
-    else if("left" == numPostionList || "right" == numPostionList){                             //当前序号位置为左右
-
-        paylineWidth = ((745 - rowNumEB * serialNumSizeEB) * arrx)/ (rowNumEB* arrx + 2*rowNumEB-1);
-        paylineHeight = paylineWidth / arrx * arry;
-        movx = paylineWidth + serialNumSizeEB + 2 * paylineWidth /arrx;
-        movy = paylineHeight + paylineHeight / arry;
-        DrawPaytable(i,data);
-
+        payLineWidth = (((winWidth - 2 * blankLeft) - rowNumEB * serialNumSizeEB) * arrayX)/ (rowNumEB* arrayX + 2*rowNumEB-1);
+        payLineHeight = payLineWidth / arrayX * arrayY;
+        movX = payLineWidth + serialNumSizeEB + 2 * payLineWidth /arrayX;
+        movy = payLineHeight + payLineHeight / arrayY;
+        DrawPayTable(serialNum,data);
     }
-
 }
 
 //根据数据绘制整个paytable
-function DrawPaytable(i,data) {
+function DrawPayTable(serialNum,data) {
 
     var count = 0;
-    var x =20;
-    var y =20;
-    if("up" == numPostionList) {
-         y = 20 + serialNumSizeEB;
-    }else if("left" == numPostionList){
-         x = 20 + serialNumSizeEB;
+    var x =blankLeft;
+    var y =blankTop;
+    if("up" == numPositionList) {
+
+        y = blankTop + serialNumSizeEB;
+    }else if("left" == numPositionList){
+
+        x = blankLeft + serialNumSizeEB;
     }
+
     seleSerialEB1 = document.getElementById("SeleSerialEB1").value;
     if("" == seleSerialEB1) {
+
         seleSerialEB1 = 1;
         document.getElementById("SeleSerialEB1").value = seleSerialEB1;
 
-    } seleSerialEB1 = parseInt(seleSerialEB1);
+    }
+
+    seleSerialEB1 = parseInt(seleSerialEB1);
     seleSerialEB2 = document.getElementById("SeleSerialEB2").value;
+
     if("" == seleSerialEB2) {
-        seleSerialEB2 = i;
+
+        seleSerialEB2 = serialNum;
         document.getElementById("SeleSerialEB2").value = seleSerialEB2;
 
-    }seleSerialEB2 = parseInt(seleSerialEB2);
-   if(seleSerialEB2<seleSerialEB1) {
-       window.alert("输入的参数不正确，请修改");
-       return;
-   }
+    }
+    seleSerialEB2 = parseInt(seleSerialEB2);
+
+    if(seleSerialEB2<seleSerialEB1) {
+
+        window.alert("输入的参数不正确，请修改");
+        return;
+    }
     for(var j =(seleSerialEB1 -1);j<seleSerialEB2 ;j++) {
 
-        if( y + paylineHeight > 460){
+        if( y + payLineHeight > winHeight){
+
             window.alert("当前设定每行元素数过少，或者选择的绘制赢钱线过多，请调整输入的参数");
             break;
         }
 
-        DrawPayline(x,y,paylineWidth,paylineHeight,data,j);
-        x = x + movx;
+        DrawPayLine(x,y,payLineWidth,payLineHeight,data,j);
+        x = x + movX;
         count++;
 
         if(rowNumEB == count){
-            x=20;
-            if("left" == numPostionList) {
-                 x = 20 + serialNumSizeEB;
+
+            x=blankLeft;
+
+            if("left" == numPositionList) {
+
+                x = blankLeft + serialNumSizeEB;
             }
+
             y = y + movy;
             y = Math.round(y);
             count =0;
         }
-
-
     }
-
 }
 
 
-//当前pay所画的位置及长度宽度和当前是文件中的第几条赢钱线
-function DrawPayline(x , y , width , height , data , d) {
+//serial当前pay所画的位置及长度宽度和当前是文件中的第几条赢钱线
+//根据数据绘制赢钱线
+function DrawPayLine(x , y , payLineWidth , payLineHeight , data , serial) {
 //根据json文件里面的配置画图，
 
-    var serialPosx = 0;
-    var serialPosy = 0;
-    var x1 = x;
-    var y1 = y;
-    var mx = x1;
-    var my = y;
-    var width1 = width/arrx - 2;
-    var height1 = height/arry - 2;
+    var serialPosX = 0;
+    var serialPosY = 0;
+    var payLineCeilX = x;
+    var payLineCeilY = y;
+    var indexY = y;
+    var payLineCeilWidth = payLineWidth/arrayX - 2;
+    var payLineCeilHeight = payLineHeight/arrayY - 2;
 
 
-    if("up" == numPostionList) {
-        serialPosx = x + width/2;
-        serialPosy = y - serialNumSizeEB/2;
+    if("up" == numPositionList) {
+
+        serialPosX = x + payLineWidth/2;
+        serialPosY = y - serialNumSizeEB/2;
     }
-    else if ("down" == numPostionList) {
-        serialPosx = x + width/2;
-        serialPosy = y + height + serialNumSizeEB;
+    else if ("down" == numPositionList) {
+
+        serialPosX = x + payLineWidth/2;
+        serialPosY = y + payLineHeight + serialNumSizeEB;
     }
-    else if("left" == numPostionList){
-        serialPosx = x - serialNumSizeEB;
-        serialPosy = y + height/2 + (serialNumSizeEB-10)/2;
+    else if("left" == numPositionList){
+
+        serialPosX = x - serialNumSizeEB;
+        serialPosY = y + payLineHeight/2 + (serialNumSizeEB-10)/2;
     }
-    else if("right" == numPostionList){
-        serialPosx = x + width +  serialNumSizeEB/2 + width1;
-        serialPosy = y + height/2 + (serialNumSizeEB-10)/2;
+    else if("right" == numPositionList){
+
+        serialPosX = x + payLineWidth +  serialNumSizeEB/2 + payLineCeilWidth;
+        serialPosY = y + payLineHeight/2 + (serialNumSizeEB-10)/2;
     }
 
 
+    for(var i =0;i<arrayX ;i++) {
 
-    for(var i =0;i<arrx ;i++) {
-        for(var j =0; j<arry;j++){
+        for(var j =0; j<arrayY;j++){
 
-            if (((arry-j-1) == (data.lines[0][d]).rows[i])) {
+            if (((arrayY-j-1) == (data.lines[0][serial]).rows[i])) {
+
                 context.fillStyle = payLineColorEB;
             }
             else {
+
                 context.fillStyle = backGroundPayLineColorEB;
             }
 
-            context.fillRect(x1, y1, width1, height1);
-            y1 = y1 + height1 +2;
-            y1 = Math.round(y1);
+            context.fillRect(payLineCeilX, payLineCeilY, payLineCeilWidth, payLineCeilHeight);
+            payLineCeilY = payLineCeilY + payLineCeilHeight +2;
+            payLineCeilY = Math.round(payLineCeilY);
         }
-        x1 = x1 + width1 +2;
-        x1 = Math.round(x1);
-        y1 = my;
-        y1 = Math.round(y1);
+
+        payLineCeilX = payLineCeilX + payLineCeilWidth +2;
+        payLineCeilX = Math.round(payLineCeilX);
+        payLineCeilY = indexY;
+        payLineCeilY = Math.round(payLineCeilY);
     }
+
     context.font = serialNumSizeEB + "px " + serialNumTypeEB;
     context.fillStyle = serialNumColorEB;
     context.textAlign = "center";
-    context.fillText(d + 1, serialPosx, serialPosy);
+    context.fillText(serial + 1, serialPosX, serialPosY);
 
 }
 
@@ -334,6 +374,7 @@ $("#Files").on("change", function(e) {
 
     // 只选择图片文件
     if (!file.type.match('image.*')) {
+
         return false;
     }
 
@@ -344,15 +385,16 @@ $("#Files").on("change", function(e) {
     // 渲染文件
     reader.onload = function(arg) {
 
-        var img = arg.target.result ;
-        document.getElementById("ImgInput").src = img;
+        document.getElementById("ImgInput").src = arg.target.result;
     }
 });
+
+
+//通过选取获取Json文件内容
 
 $("#SeleFiles").on("change", function(e) {
 
     var file = e.target.files[0]; //获取Json资源
-
 
     loadJsonFile = true;
 
@@ -360,30 +402,48 @@ $("#SeleFiles").on("change", function(e) {
 
     reader.readAsText(file); // 读取文件
 
-
     reader.onload = function(arg) {
 
         jsonFile =  JSON.parse(arg.target.result);
+        var count = 0;
 
-    }
-});
-$("#SujectList").change(function () {
-        var selectNum = document.getElementById("SujectList").value;
+        while (undefined != jsonFile.lines[0][count]) {
 
-        $.getJSON(PreUrlName + selectNum + ".json", function (data) {
-            count = 0;
-            while (undefined != data.lines[0][count]) {
             count++;
         }
-            document.getElementById("NumOfJsonEb").value = count;
-            seleSerialEB2 = count;
-            seleSerialEB1 = 1;
-            document.getElementById("SeleSerialEB2").value = seleSerialEB2
-            document.getElementById("SeleSerialEB1").value = seleSerialEB1
 
-        });
+        document.getElementById("NumOfJsonEb").value = count;
+        seleSerialEB2 = count;
+        seleSerialEB1 = 1;
+        document.getElementById("SeleSerialEB2").value = seleSerialEB2;
+        document.getElementById("SeleSerialEB1").value = seleSerialEB1;
+
+    }
 
 
+});
+
+//实时更新Json文件赢钱线总数，和预设预览的赢钱线序号为最大
+$("#SujectList").change(function () {
+
+    var count;
+    var selectNum = document.getElementById("SujectList").value;
+
+    $.getJSON(PreUrlName + selectNum + ".json", function (data) {
+
+        count = 0;
+
+        while (undefined != data.lines[0][count]) {
+
+            count++;
+        }
+
+        document.getElementById("NumOfJsonEb").value = count;
+        seleSerialEB2 = count;
+        seleSerialEB1 = 1;
+        document.getElementById("SeleSerialEB2").value = seleSerialEB2;
+        document.getElementById("SeleSerialEB1").value = seleSerialEB1;
+    });
 });
 
 
