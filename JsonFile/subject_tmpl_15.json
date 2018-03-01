@@ -642,6 +642,13 @@
           "image": "hit_diamond_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "hit_diamond_paytable2.png",
+          "title": "",
+          "centerImage": true
         }
       ]
     },

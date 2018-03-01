@@ -338,9 +338,17 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "classic777_paytable.png",
+          "image": "classic777_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "classic777_paytable2.png",
+          "title": "",
+          "centerImage": true,
+          "show": false
         }
       ]
     },

@@ -546,7 +546,7 @@
     "symbolBatchName": "100_yard_fever/reels/symbol/100_yard_fever_icon.png",
     "symbolBatchPlistPath": "100_yard_fever/reels/symbol/100_yard_fever_icon.plist",
     "winMusic": "",
-    "spinUiTitleName": "casino/casino_ui_title",
+    "spinUiTitleName": "casino/ui_title",
     "spinUiBottomName": "slot/slot_spin_ui",
     "winEffectMap": {
       "1": {

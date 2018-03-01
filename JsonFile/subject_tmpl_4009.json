@@ -1053,6 +1053,13 @@
           "image": "forest_mania_paytable2.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "forest_mania_paytable3.png",
+          "title": "",
+          "centerImage": true
         }
       ]
     },

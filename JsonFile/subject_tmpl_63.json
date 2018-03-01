@@ -455,7 +455,7 @@
       "jackpotAnimName": "turkey_shoot/reels/symbol/turkey_shoot_jackpot.ccbi",
       "bgName": "",
       "imgName": "turkey_shoot_jackpot.png",
-      "name": "touchdown",
+      "name": "jackpot",
       "payTables": null,
       "reelMask": 255,
       "reelMaskFree": 255,
@@ -624,6 +624,13 @@
           "content": "",
           "descriptionTemplateId": 1,
           "image": "turkey_shoot_paytable.jpg",
+          "title": "",
+          "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "turkey_shoot_paytable2.png",
           "title": "",
           "centerImage": true
         }

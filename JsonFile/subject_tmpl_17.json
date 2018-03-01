@@ -1016,6 +1016,13 @@
           "image": "rapid_hit_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "rapid_hit_paytable4.png",
+          "title": "",
+          "centerImage": true
         }
       ]
     },

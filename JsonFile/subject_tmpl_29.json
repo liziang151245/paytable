@@ -512,19 +512,17 @@
     "bgName": "wheel_of_luck_5line/reels/bg/wheel_of_luck_5line_background.jpg", 
     "reelName": "", 
     "slotSceneType": 129, 
-    "displayName": "Wheel Of Luck", 
+    "displayName": "Wheel Of Luck 5Line", 
     "freeSpinBgMusic": "", 
-    "name": "Wheel Of Luck", 
+    "name": "Wheel Of Luck 5Line", 
     "resRootDir": "wheel_of_luck_5line", 
     "spinBgMusicArray": [
-      "slots/spin_bg/spin-bg-1", 
-      "slots/spin_bg/spin-bg-2", 
-      "slots/spin_bg/spin-bg-3"
+      "slots/spin_bg/spin-bg-2"
     ], 
     "symbolBatchName": "wheel_of_luck_5line/reels/symbol/wheel_of_luck_5line_symbol_batch.png", 
     "symbolBatchPlistPath": "wheel_of_luck_5line/reels/symbol/wheel_of_luck_5line_symbol_batch.plist", 
     "winMusic": "", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {

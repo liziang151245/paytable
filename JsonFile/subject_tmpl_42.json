@@ -841,7 +841,7 @@
     ], 
     "symbolBatchName": "merry_christmas/reels/symbol/merry_christmas_symbol_batch.png", 
     "symbolBatchPlistPath": "merry_christmas/reels/symbol/merry_christmas_symbol_batch.plist", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -853,14 +853,13 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
       "4": {
         "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 30
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

@@ -400,7 +400,7 @@
     "smallWinPath": "fire_777_5lines/reels/symbol/fire_777_5lines_effect_win.ccbi", 
     "bigWinPath": "fire_777_5lines/reels/symbol/fire_777_5lines_effect_bigwin.ccbi", 
     "winMusic": "", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {

@@ -431,7 +431,7 @@
     "symbolBatchName": "big_bonus/reels/symbol/big_bonus_symbol_batch.png", 
     "symbolBatchPlistPath": "big_bonus/reels/symbol/big_bonus_symbol_batch.plist", 
     "winMusic": "", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -443,14 +443,13 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
       "4": {
         "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 30
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

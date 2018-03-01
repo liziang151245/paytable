@@ -361,7 +361,7 @@
     ], 
     "symbolBatchName": "deluxe_777/reels/symbol/deluxe_777_symbol_batch.png", 
     "symbolBatchPlistPath": "deluxe_777/reels/symbol/deluxe_777_symbol_batch.plist", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -374,11 +374,12 @@
       }, 
       "3": {
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 3
+        "effectDuration": 10
       }, 
       "4": {
+        "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 3
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

@@ -416,7 +416,7 @@
     "symbolBatchName": "triple_wheel_deluxe/reels/symbol/triple_wheel_deluxe_symbol_batch.png",
     "symbolBatchPlistPath": "triple_wheel_deluxe/reels/symbol/triple_wheel_deluxe_symbol_batch.plist",
     "winMusic": "",
-    "spinUiTitleName": "casino/casino_ui_title",
+    "spinUiTitleName": "casino/ui_title",
     "spinUiBottomName": "slot/slot_spin_ui",
     "winEffectMap": {
       "1": {

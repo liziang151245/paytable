@@ -763,7 +763,7 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "skulls_party_classic777_paytable.png",
+          "image": "skulls_party_classic777_paytable.jpg",
           "title": "",
           "centerImage": true
         },
@@ -791,7 +791,14 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "skulls_party_triple_diamond_paytable.png",
+          "image": "skulls_party_triple_diamond_paytable.jpg",
+          "title": "",
+          "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "skulls_party_paytable3.png",
           "title": "",
           "centerImage": true
         }

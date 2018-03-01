@@ -324,7 +324,7 @@
     }
   ], 
   "client": {
-    "symbolMoveMode": 1796, 
+    "symbolMoveMode": 1792, 
     "payTableConfig": {
       "payTableType": 0, 
       "specialDescription": {
@@ -363,7 +363,7 @@
     ], 
     "symbolBatchName": "fortunate_fortune/reels/symbol/fortunate_fortune_symbol_batch.png", 
     "symbolBatchPlistPath": "fortunate_fortune/reels/symbol/fortunate_fortune_symbol_batch.plist", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -375,14 +375,13 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
-        "effectName": "slots/small_win/small-win-2", 
+        "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
       "4": {
         "effectType": 1, 
-        "effectName": "slots/small_win/small-win-2", 
-        "effectDuration": 30
+        "effectName": "slots/small_win/small-win-1", 
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

@@ -8,7 +8,7 @@
       {
         "content": "",
         "descriptionTemplateId": 1,
-        "image": "jackpot_diamond_paytable_1.jpg",
+        "image": "jackpot_diamond_paytable2.jpg",
         "title": "",
         "centerImage": true
       },
@@ -16,6 +16,13 @@
         "content": "",
         "descriptionTemplateId": 1,
         "image": "jackpot_diamond_paytable.jpg",
+        "title": "",
+        "centerImage": true
+      },
+      {
+        "content": "",
+        "descriptionTemplateId": 1,
+        "image": "jackpot_diamond_paytable3.png",
         "title": "",
         "centerImage": true
       }

@@ -690,7 +690,14 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "santas_gifts_paytable.png",
+          "image": "santas_gifts_paytable.jpg",
+          "title": "",
+          "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "santas_gifts_paytable2.png",
           "title": "",
           "centerImage": true
         }

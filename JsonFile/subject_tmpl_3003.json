@@ -160,34 +160,6 @@
       "symbolValue": 1102, 
       "symbolW": 1
     }, 
-    "1103": {
-      "animEffect": 2, 
-      "animName": "", 
-      "bgName": "", 
-      "imgName": "super_wild_15x.png", 
-      "name": "Wild 15X", 
-      "payTables": null, 
-      "reelMask": 255, 
-      "reelMaskFree": 255, 
-      "symbolH": 1, 
-      "symbolId": 1103, 
-      "symbolValue": 1103, 
-      "symbolW": 1
-    }, 
-    "1104": {
-      "animEffect": 2, 
-      "animName": "", 
-      "bgName": "", 
-      "imgName": "super_wild_20x.png", 
-      "name": "Wild 20X", 
-      "payTables": null, 
-      "reelMask": 0, 
-      "reelMaskFree": 0, 
-      "symbolH": 1, 
-      "symbolId": 1104, 
-      "symbolValue": 1104, 
-      "symbolW": 1
-    }, 
     "1000": {
       "animEffect": 2, 
       "animName": "", 
@@ -349,7 +321,7 @@
     }
   ], 
   "client": {
-    "symbolMoveMode": 1792, 
+    "symbolMoveMode": 1796, 
     "payTableConfig": {
       "payTableType": 0, 
       "specialDescription": {
@@ -389,7 +361,7 @@
     ], 
     "symbolBatchName": "super_wild/reels/symbol/super_wild_symbol_batch.png", 
     "symbolBatchPlistPath": "super_wild/reels/symbol/super_wild_symbol_batch.plist", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -401,14 +373,13 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
       "4": {
         "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 30
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

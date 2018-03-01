@@ -1074,6 +1074,13 @@
           "image": "lucky_clover_paytable2.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "lucky_clover_paytable4.png",
+          "title": "",
+          "centerImage": true
         }
       ]
     },

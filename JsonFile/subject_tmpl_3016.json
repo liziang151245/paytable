@@ -341,6 +341,14 @@
           "image": "super_winner_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "super_winner_paytable2.png",
+          "title": "",
+          "centerImage": true,
+          "show": false
         }
       ]
     },

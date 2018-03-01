@@ -642,6 +642,13 @@
           "image": "oz_classic_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "oz_classic_paytable2.png",
+          "title": "",
+          "centerImage": true
         }
       ]
     },

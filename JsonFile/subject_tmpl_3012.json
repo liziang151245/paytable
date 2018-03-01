@@ -337,6 +337,14 @@
           "image": "thanksgiving_hit_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "thanksgiving_hit_paytable2.png",
+          "title": "",
+          "centerImage": true,
+          "show": false
         }
       ]
     },

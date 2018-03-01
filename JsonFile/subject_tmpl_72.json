@@ -376,7 +376,7 @@
     "symbolBatchName": "violet_valentine/reels/symbol/violet_valentine_symbol.png",
     "symbolBatchPlistPath": "violet_valentine/reels/symbol/violet_valentine_symbol.plist",
     "winMusic": "",
-    "spinUiTitleName": "casino/casino_ui_title",
+    "spinUiTitleName": "casino/ui_title",
     "spinUiBottomName": "slot/slot_spin_ui",
     "winEffectMap": {
       "1": {

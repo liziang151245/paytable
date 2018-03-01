@@ -373,9 +373,17 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "all_for_america_paytable.png",
+          "image": "all_for_america_paytable.jpg",
           "title": "",
           "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "all_for_america_paytable2.png",
+          "title": "",
+          "centerImage": true,
+          "show": false
         }
       ]
     },

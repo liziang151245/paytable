@@ -599,21 +599,28 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "hercules_paytable_1.jpg",
+          "image": "hercules_paytable.jpg",
           "title": "",
           "centerImage": true
         },
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "hercules_paytable_2.jpg",
+          "image": "hercules_paytable2.jpg",
           "title": "",
           "centerImage": true
         },
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "hercules_paytable_3.jpg",
+          "image": "hercules_paytable3.jpg",
+          "title": "",
+          "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "hercules_paytable4.png",
           "title": "",
           "centerImage": true
         }

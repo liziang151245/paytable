@@ -540,14 +540,21 @@
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "touchdown_paytable_1.jpg",
+          "image": "touchdown_paytable.jpg",
           "title": "",
           "centerImage": true
         },
         {
           "content": "",
           "descriptionTemplateId": 1,
-          "image": "touchdown_paytable_2.jpg",
+          "image": "touchdown_paytable2.jpg",
+          "title": "",
+          "centerImage": true
+        },
+        {
+          "content": "",
+          "descriptionTemplateId": 1,
+          "image": "touchdown_paytable3.png",
           "title": "",
           "centerImage": true
         }

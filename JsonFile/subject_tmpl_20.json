@@ -201,34 +201,6 @@
       "symbolId": 1003, 
       "symbolValue": 1003, 
       "symbolW": 1
-    }, 
-    "1004": {
-      "animEffect": 0, 
-      "animName": "wheel_of_diamond/reels/symbol/wheel_of_diamond_bonus_1004.ccbi", 
-      "bgName": "", 
-      "imgName": "wheel_of_diamond_bonus_1004.png", 
-      "name": "Wild 5X", 
-      "payTables": null, 
-      "reelMask": 255, 
-      "reelMaskFree": 255, 
-      "symbolH": 1, 
-      "symbolId": 0, 
-      "symbolValue": 0, 
-      "symbolW": 1
-    }, 
-    "1005": {
-      "animEffect": 0, 
-      "animName": "wheel_of_diamond/reels/symbol/wheel_of_diamond_bonus_1005.ccbi", 
-      "bgName": "", 
-      "imgName": "wheel_of_diamond_bonus_1005.png", 
-      "name": "Wild 5X", 
-      "payTables": null, 
-      "reelMask": 255, 
-      "reelMaskFree": 255, 
-      "symbolH": 1, 
-      "symbolId": 0, 
-      "symbolValue": 0, 
-      "symbolW": 1
     }
   }, 
   "specialPayTables": [
@@ -427,7 +399,7 @@
     "symbolBatchName": "wheel_of_diamond/reels/symbol/wheel_of_diamond_symbol_batch.png", 
     "symbolBatchPlistPath": "wheel_of_diamond/reels/symbol/wheel_of_diamond_symbol_batch.plist", 
     "winMusic": "", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -439,14 +411,13 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
       "4": {
         "effectType": 1, 
         "effectName": "slots/small_win/small-win-1", 
-        "effectDuration": 30
+        "effectDuration": 20
       }
     }, 
     "functionType": 2

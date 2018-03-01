@@ -11,6 +11,14 @@
         "image": "atlantic_city_paytable.png",
         "title": "",
         "centerImage": true
+      },
+      {
+        "content": "",
+        "descriptionTemplateId": 1,
+        "image": "atlantic_city_paytable2.png",
+        "title": "",
+        "centerImage": true,
+        "show": false
       }
     ],
     "specialDescription": {

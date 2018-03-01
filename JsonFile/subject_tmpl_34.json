@@ -611,7 +611,7 @@
     "symbolBatchName": "stars_777/reels/symbol/stars_777_symbol_batch.png", 
     "symbolBatchPlistPath": "stars_777/reels/symbol/stars_777_symbol_batch.plist", 
     "winMusic": "", 
-    "spinUiTitleName": "casino/casino_ui_title", 
+    "spinUiTitleName": "casino/ui_title", 
     "spinUiBottomName": "slot/slot_spin_ui", 
     "winEffectMap": {
       "1": {
@@ -623,7 +623,7 @@
         "effectDuration": 3
       }, 
       "3": {
-        "effectType": 1, 
+        "effectType": 1,
         "effectName": "slots/small_win/small-win-1", 
         "effectDuration": 10
       }, 
